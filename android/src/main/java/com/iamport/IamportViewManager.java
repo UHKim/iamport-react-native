@@ -1,5 +1,4 @@
 
-
 package com.iamport;
 
 import android.app.Activity;
@@ -32,10 +31,12 @@ public class IamportViewManager extends SimpleViewManager<IamportWebView> implem
 
   @Override
   public void onActivityResult(Activity activity, int requestCode, int resultCode, Intent data) {
-    /* 나이스 웹뷰 클라이언트에서 startActivityForResult를 호출한 경우에 한정 */
-    if (requestCode == 4117) {
-      /* 실시간 계좌이체 인증 후 후속처리 루틴 */
-      webViewClient.bankPayPostProcess(requestCode, resultCode, data);
+    if (webViewClient != null) {
+      /* 나이스 웹뷰 클라이언트에서 startActivityForResult를 호출한 경우에 한정 */
+      if (requestCode == 4117) {
+        /* 실시간 계좌이체 인증 후 후속처리 루틴 */
+        webViewClient.bankPayPostProcess(requestCode, resultCode, data);
+      }
     }
   }
 
@@ -79,15 +80,15 @@ public class IamportViewManager extends SimpleViewManager<IamportWebView> implem
     /* Set web view client by pg provider */
     ReadableMap data = param.getMap("data");
     String pg = data.getString("pg");
-    switch(pg) {
-      case "nice": {
-        webViewClient = new NiceWebViewClient(reactContext, activity, param);
-        break;
-      }
-      default: {
-        webViewClient = new IamportWebViewClient(reactContext, activity, param);
-        break;
-      }
+    switch (pg) {
+    case "nice": {
+      webViewClient = new NiceWebViewClient(reactContext, activity, param);
+      break;
+    }
+    default: {
+      webViewClient = new IamportWebViewClient(reactContext, activity, param);
+      break;
+    }
     }
     view.setWebViewClient(webViewClient);
   }
