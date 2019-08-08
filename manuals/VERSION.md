@@ -1,12 +1,13 @@
-# iamport-react-native
-[ ![alt text](https://img.shields.io/badge/react-v16.8.6-orange.svg?longCache=true&style=flat-square) ](https://github.com/facebook/react/)
-[ ![alt text](https://img.shields.io/badge/react--native-v0.59.8-yellow.svg?longCache=true&style=flat-square) ](https://github.com/facebook/react-native)
-[ ![alt text](https://img.shields.io/badge/query--string-v6.1.0-green.svg?longCache=true&style=flat-square) ](https://github.com/sindresorhus/query-string)
+# 버전정보
 
 아임포트 리액트 네이티브 모듈 버전 정보 안내입니다.
 
-## 버전정보
-- [v1.1.4-rc.0](https://github.com/iamport/iamport-react-native/tree/master)
+- [v1.1.4-rc.1](https://github.com/iamport/iamport-react-native/tree/master)
+  - 기존에 작성된 웹 페이지를 리액트 네이티브에서 웹뷰로 재활용하는 경우를 위한 exampleForWebView 예제 프로젝트를 추가하였습니다.
+  - 예제 프로젝트의 신용카드 할부 개월수 변수명 오타를 수정하였습니다.
+  - 웹 표준 이니시스 & 실시간 계좌이체 결제 중단시 처리 로직을 추가하였습니다.
+
+- [v1.1.4-rc.0](https://github.com/iamport/iamport-react-native/tree/v1.1.4-rc.0)
   - 안드로이드에서 react-native-fbsdk와 충돌하는 이슈를 해결하였습니다.
 
 - [v1.1.3-rc](https://github.com/iamport/iamport-react-native/tree/v1.1.3-rc)
